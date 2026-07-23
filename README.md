@@ -117,6 +117,34 @@ practice/
 │   ├── manacher.cpp               #   Manacher — 最长回文子串 O(n)
 │   └── aho_corasick.cpp           #   AC 自动机 — 多模式匹配
 │
+├── 16_research_ds/                 # 科研向：概率DS与分布式 (NEW!)
+│   ├── count_min_sketch.cpp        #   Count-Min Sketch 频率估计
+│   ├── hyperloglog.cpp            #   HyperLogLog 基数估计
+│   ├── consistent_hashing.cpp     #   一致性哈希 + 虚拟节点
+│   ├── merkle_tree.cpp            #   Merkle 哈希树
+│   ├── cuckoo_filter.cpp          #   Cuckoo Filter (支持删除)
+│   └── lru_k.cpp                  #   LRU-K 缓存淘汰
+│
+├── 17_interview_algos/             # 大厂面试：高频模板 (NEW!)
+│   ├── monotonic_stack.cpp        #   单调栈 (4大题型)
+│   ├── two_pointers.cpp           #   双指针 (对撞/快慢)
+│   ├── prefix_sum.cpp             #   前缀和+哈希优化
+│   ├── interval_problems.cpp      #   区间合并/会议室/射气球
+│   ├── stock_trading.cpp          #   股票买卖 I~IV (DP演化)
+│   ├── binary_search_patterns.cpp #   二分模式 (旋转/峰值/2D)
+│   ├── backtracking_template.cpp  #   回溯模板 (排列/子集/组合)
+│   └── substring_sliding.cpp      #   滑动窗口 (最小覆盖/异位词)
+│
+├── 18_competitive_prog/            # 竞赛向 (NEW!)
+│   ├── persistent_segtree.cpp     #   可持久化线段树 (主席树)
+│   ├── heavy_light_decomp.cpp     #   树链剖分 (HLD)
+│   ├── mo_algorithm.cpp           #   莫队算法
+│   ├── matrix_fastpow.cpp         #   矩阵快速幂 O(log n)
+│   ├── sg_theorem.cpp             #   SG定理 (博弈论)
+│   ├── bit_2d.cpp                 #   二维树状数组
+│   ├── kmp_automaton.cpp          #   KMP自动机 (DFA)
+│   └── convex_hull.cpp            #   凸包 (Graham Scan)
+│
 └── exercises/                     # 经典习题集
     ├── list_problems/             #   链表专题
     ├── tree_problems/             #   树专题
