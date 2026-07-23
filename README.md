@@ -145,6 +145,54 @@ practice/
 │   ├── kmp_automaton.cpp          #   KMP自动机 (DFA)
 │   └── convex_hull.cpp            #   凸包 (Graham Scan)
 │
+├── 19_dp_advanced/                  # 动态规划进阶 (NEW!)
+│   ├── state_compression.cpp       #   状态压缩DP (TSP/铺砖)
+│   ├── digit_dp.cpp               #   数位DP
+│   ├── tree_dp.cpp                #   树形DP (独立集/直径/背包)
+│   ├── interval_dp.cpp            #   区间DP (石子合并/矩阵链)
+│   ├── knapsack_variants.cpp      #   背包九讲 (01/完全/多重/分组)
+│   └── dp_optimization.cpp        #   DP优化 (单调队列/斜率)
+│
+├── 20_number_theory/               # 数论与数学算法 (NEW!)
+│   ├── extended_gcd.cpp           #   扩展欧几里得 + 模逆元
+│   ├── chinese_remainder.cpp      #   中国剩余定理 (CRT/exCRT)
+│   ├── miller_rabin.cpp           #   Miller-Rabin 素性测试
+│   ├── pollard_rho.cpp            #   Pollard's Rho 大整数分解
+│   ├── fft.cpp                    #   快速傅里叶变换 (FFT)
+│   └── linear_sieve.cpp           #   线性筛 + 积性函数
+│
+├── 21_computational_geometry/      # 计算几何 (NEW!)
+│   ├── geo_primitives.cpp         #   几何基础原语 (叉积/点积)
+│   ├── segment_intersection.cpp   #   线段相交 + 扫描线
+│   ├── closest_pair.cpp           #   最近点对 (分治)
+│   ├── polygon_ops.cpp            #   多边形面积/重心/内点判定
+│   ├── rotating_calipers.cpp      #   旋转卡壳 (凸包直径)
+│   └── halfplane_intersection.cpp #   半平面交
+│
+├── 22_storage_systems/             # 存储系统数据结构 (NEW!)
+│   ├── bplus_tree.cpp             #   B+树 (数据库索引)
+│   ├── lsm_tree.cpp               #   LSM Tree (写优化引擎)
+│   ├── wal.cpp                    #   Write-Ahead Log
+│   ├── inverted_index.cpp         #   倒排索引 (搜索引擎)
+│   ├── bitmap_index.cpp           #   位图索引 (OLAP)
+│   └── sstable.cpp                #   SSTable / MemTable
+│
+├── 23_concurrent_ds/               # 并发数据结构 (NEW!)
+│   ├── lockfree_stack.cpp         #   无锁栈 (Treiber Stack)
+│   ├── lockfree_queue.cpp         #   无锁队列 (Michael-Scott)
+│   ├── concurrent_hashmap.cpp     #   分段锁哈希表
+│   ├── rcu_demo.cpp               #   Read-Copy-Update (RCU)
+│   ├── spinlock_rwlock.cpp        #   自旋锁 + 读写锁
+│   └── ring_buffer.cpp            #   无锁环形缓冲区
+│
+├── 24_ml_structures/               # AI/ML 数据结构 (NEW!)
+│   ├── kd_tree.cpp                #   KD-Tree (多维搜索树)
+│   ├── ball_tree.cpp              #   Ball Tree (度量空间)
+│   ├── rtree.cpp                  #   R-Tree (空间索引)
+│   ├── lsh.cpp                    #   LSH (随机超平面)
+│   ├── minhash.cpp                #   MinHash (Jaccard估计)
+│   └── simhash.cpp                #   SimHash (网页去重)
+│
 └── exercises/                     # 经典习题集
     ├── list_problems/             #   链表专题
     ├── tree_problems/             #   树专题
@@ -202,6 +250,15 @@ find . -name "*.cpp" -exec g++ -std=c++17 {} -o {}.out \;
 | 进阶结构 | 线段树、树状数组、Trie、并查集、ST表、跳表 | O(log n) / ≈O(1) |
 | 进阶图算法 | Tarjan SCC、Bellman-Ford、Dinic最大流、匈牙利 | O(V+E) ~ O(V²E) |
 | 进阶字符串 | 滚动哈希、Manacher、AC自动机 | O(n) / O(n+matches) |
+| 科研向DS | Count-Min、HyperLogLog、一致性哈希、Merkle、Cuckoo Filter、LRU-K | 亚线性/近似 |
+| 面试模板 | 单调栈、双指针、前缀和、滑动窗口、回溯、二分模式 | O(n) / O(n log n) |
+| 竞赛向 | 主席树、HLD、莫队、矩阵快速幂、SG定理、二维BIT、凸包 | O(log n) ~ O(n√n) |
+| DP进阶 | 状压DP、数位DP、树形DP、区间DP、背包变体、斜率优化 | O(n³) ~ O(n log n) |
+| 数论 | 扩展GCD、CRT、Miller-Rabin、Pollard-Rho、FFT、线性筛 | O(log n) ~ O(n^(1/4)) |
+| 计算几何 | 向量运算、线段相交、最近点对、多边形、旋转卡壳、半平面交 | O(n) ~ O(n log n) |
+| 存储系统 | B+树、LSM Tree、WAL、倒排索引、位图索引、SSTable | O(log n) / 顺序写 |
+| 并发DS | 无锁栈/队列、分段锁HashMap、RCU、Spinlock、Ring Buffer | O(1) 无锁 |
+| ML结构 | KD-Tree、Ball Tree、R-Tree、LSH、MinHash、SimHash | 近似 O(log n) |
 
 ## 🔥 近年826算法题速览
 
