@@ -1,0 +1,23 @@
+# Compiled executables
+*.exe
+*.out
+*.o
+*.obj
+
+# Debug
+*.pdb
+*.ilk
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Build directories
+build/
+cmake-build-*/
