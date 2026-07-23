@@ -5,20 +5,12 @@
  * 本仓库基于邓俊辉《数据结构(C++语言版)》教材体系构建
  * 包含教材核心数据结构的完整实现、经典算法与应用示例
  *
- * 仓库结构:
- *   01_introduction/    - 绪论：复杂度分析、递归、Fibonacci
- *   02_vector/          - 向量：动态数组、二分查找、排序
- *   03_list/            - 列表：链表、约瑟夫斯问题
- *   04_stack_queue/     - 栈与队列：表达式求值、回溯法
- *   05_binary_tree/     - 二叉树：遍历、Huffman编码、重构
- *   06_graph/           - 图：BFS/DFS、拓扑排序、最短路径、MST
- *   07_bst/             - 搜索树：BST、AVL树
- *   08_advanced_tree/   - 高级搜索树：伸展树、B-树、红黑树
- *   09_dictionary/      - 词典：哈希表、跳转表、桶排序
- *   10_priority_queue/  - 优先级队列：二叉堆、左式堆、堆排序
- *   11_string/          - 串：KMP、BM、Karp-Rabin匹配
- *   12_sorting/         - 排序：快速排序、希尔排序、基数排序
- *   exercises/          - 经典习题集：链表、树、图、DP专题
+ * Part I 基础篇 (01-06): 绪论/向量/列表/栈队列/二叉树/图
+ * Part II 搜索与索引 (07-12): BST/高级树/词典/堆/串/排序
+ * Part III 高级DS (13-18): 线段树/可持久化/树上算法/后缀/Wavelet/空间索引
+ * Part IV 图论网络 (19-22): 图进阶/网络流/谱图论/线性规划
+ * Part V 算法核心 (23-29): 字符串/DP基础/DP进阶/数论/计算几何/随机/在线
+ * Part VI 系统实战 (30-36): 概率/存储/并发/内存/外存/面试/竞赛
  *
  * 编译: g++ -std=c++17 filename.cpp -o filename
  * 运行: ./filename
