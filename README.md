@@ -7,7 +7,7 @@
 
 ## 简介
 
-本仓库基于清华大学邓俊辉教授《数据结构（C++语言版）》第3版教材体系构建，提供 **172 个完整可运行 C++ 实现**，涵盖 36 章、6 大知识领域。适合：
+本仓库基于清华大学邓俊辉教授《数据结构（C++语言版）》第3版教材体系构建，提供 **191 个完整可运行 C++ 实现**，涵盖 36 章、6 大知识领域。适合：
 
 - 清华数据结构课程（30240184）的学习者
 - 408/826 计算机考研复习
@@ -80,7 +80,8 @@ practice/
 ├── 08_advanced_tree/                 # 第8章 高级搜索树
 │   ├── splay_tree.hpp                #   伸展树 (zig/zig-zig/zig-zag)
 │   ├── b_tree.hpp                    #   B-树 (5阶)
-│   └── red_black_tree.hpp            #   红黑树
+│   ├── red_black_tree.hpp            #   红黑树
+│   └── advanced_tree_demo.cpp        #   三种高级树综合演示
 │
 ├── 09_dictionary/                    # 第9章 词典与哈希
 │   ├── hash_table.hpp                #   哈希表 (分离链+开放定址)
@@ -165,11 +166,17 @@ practice/
 │
 ├── 21_spectral_graph/                # 谱图论
 │   ├── pagerank.cpp                  #   PageRank 算法
-│   └── spectral_clustering.cpp       #   谱聚类 (Laplacian)
+│   ├── spectral_clustering.cpp       #   谱聚类 (Laplacian)
+│   ├── graph_laplacian.cpp           #   图 Laplacian + Fiedler向量
+│   ├── random_walk.cpp               #   图上随机游走 (击中/覆盖)
+│   └── electrical_network.cpp        #   电阻网络 (有效电阻)
 │
 ├── 22_linear_programming/            # 线性规划
 │   ├── simplex.cpp                   #   Simplex 单纯形算法
-│   └── lp_duality.cpp                #   LP 对偶性 (最大流↔最小割)
+│   ├── lp_duality.cpp                #   LP 对偶性 (最大流↔最小割)
+│   ├── maxflow_lp.cpp                #   最大流的LP形式+互补松弛
+│   ├── assignment_lp.cpp             #   指派问题 (匈牙利算法)
+│   └── two_player_game.cpp           #   双人零和博弈 (Minimax定理)
 ║                                                                        ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 
@@ -211,11 +218,17 @@ practice/
 │
 ├── 28_randomized_algorithms/         # 随机化算法
 │   ├── quickselect.cpp               #   QuickSelect O(n)期望
-│   └── monte_carlo.cpp               #   Monte Carlo + Las Vegas
+│   ├── monte_carlo.cpp               #   Monte Carlo + Las Vegas
+│   ├── reservoir_sampling.cpp        #   蓄水池抽样 (流式随机样本)
+│   ├── las_vegas.cpp                 #   Las Vegas (随机快排/选择)
+│   └── randomized_rounding.cpp       #   随机化舍入 (Set Cover近似)
 │
 ├── 29_online_streaming/              # 在线与流式算法
 │   ├── heavy_hitters.cpp             #   Heavy Hitters (Misra-Gries)
-│   └── online_paging.cpp             #   在线分页 (LRU/OPT/竞争比)
+│   ├── online_paging.cpp             #   在线分页 (LRU/OPT/竞争比)
+│   ├── count_sketch.cpp              #   Count-Sketch (无偏频率估计)
+│   ├── ski_rental.cpp                #   滑雪租赁 (竞争比分析)
+│   └── sliding_window_stats.cpp      #   滑动窗口最值/中位数/DGIM
 ║                                                                        ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 
@@ -250,11 +263,17 @@ practice/
 │
 ├── 33_memory_management/             # 内存管理
 │   ├── buddy_allocator.cpp           #   Buddy Allocator (伙伴分配器)
-│   └── memory_pool.cpp               #   Memory Pool (对象池)
+│   ├── memory_pool.cpp               #   Memory Pool (对象池)
+│   ├── slab_allocator.cpp            #   SLAB分配器 (Linux内核风格)
+│   ├── region_allocator.cpp          #   Region/Arena分配器 (Mark&Rewind)
+│   └── gc_mark_sweep.cpp             #   标记-清除GC (三色抽象)
 │
 ├── 34_external_memory/               # 外存算法
 │   ├── external_merge_sort.cpp       #   外部归并排序
-│   └── kway_merge.cpp               #   K路归并 + 败者树
+│   ├── kway_merge.cpp                #   K路归并 + 败者树
+│   ├── buffer_tree.cpp               #   缓冲树 (批量I/O优化)
+│   ├── cache_oblivious.cpp            #   缓存忘却算法 (CO矩阵乘法)
+│   └── column_store.cpp              #   列式存储 (OLAP vs OLTP)
 │
 ├── 35_interview_patterns/            # 大厂面试高频模板
 │   ├── monotonic_stack.cpp           #   单调栈 (接雨水/柱状图)
@@ -310,7 +329,7 @@ g++ -std=c++17 01_introduction/fibonacci.cpp -o fibonacci
 | 章节 | 核心算法 | 复杂度 |
 |------|----------|--------|
 | 搜索树 | BST操作、AVL旋转/3+4重构 | O(h) / O(log n) |
-| 高级搜索树 | 伸展、B-树分裂/合并、红黑树 | 均摊 O(log n) |
+| 高级搜索树 | 伸展、B-树分裂/合并、红黑树 + 综合演示 | 均摊 O(log n) |
 | 词典 | 哈希查找、布隆过滤器 | O(1)期望 |
 | 优先级队列 | Floyd建堆、左式堆合并、Top-K | O(n) / O(log n) |
 | 串匹配 | KMP (next/nextval)、BM (BC+GS) | O(n+m) |
@@ -331,8 +350,8 @@ g++ -std=c++17 01_introduction/fibonacci.cpp -o fibonacci
 |------|----------|--------|
 | 图论进阶 | Tarjan SCC、Bellman-Ford、桥/割点、Dinic最大流、匈牙利 | O(V+E)~O(V²E) |
 | 网络流 | 最小费用最大流(SSP)、Stoer-Wagner全局最小割、下界流 | O(F·VE)~O(V³) |
-| 谱图论 | PageRank、谱聚类、Laplacian分解 | O(n³) 幂迭代 |
-| 线性规划 | Simplex单纯形、LP对偶性、最大流-最小割定理 | 指数最坏/多项式平均 |
+| 谱图论 | PageRank、谱聚类、图Laplacian/Fiedler向量、随机游走、电阻网络 | O(n³) 幂迭代 |
+| 线性规划 | Simplex单纯形、LP对偶性、MaxFlow-LP、指派问题、博弈Minimax | 指数最坏/多项式平均 |
 
 ### Part V — 算法核心
 | 章节 | 核心算法 | 复杂度 |
@@ -342,8 +361,8 @@ g++ -std=c++17 01_introduction/fibonacci.cpp -o fibonacci
 | DP进阶 | 状压DP、数位DP、单调队列/斜率优化、概率DP | O(n log n)~O(3ⁿ) |
 | 数论 | 扩展GCD、CRT、Miller-Rabin、Pollard-Rho、FFT、线性筛 | O(log n)~O(n^(1/4)) |
 | 计算几何 | 原语、线段交、最近点对、多边形、旋转卡壳、半平面交 | O(n)~O(n log n) |
-| 随机化 | QuickSelect(期望O(n))、Monte Carlo/Las Vegas | O(n)期望 |
-| 在线/流式 | Misra-Gries Heavy Hitters、在线分页(LRU/OPT/竞争比) | O(k)空间 |
+| 随机化 | QuickSelect、Monte Carlo/Las Vegas、蓄水池抽样、随机化舍入 | O(n)期望 |
+| 在线/流式 | Misra-Gries、Count-Sketch、在线分页、滑雪租赁、滑动窗口统计 | O(k)空间 |
 
 ### Part VI — 系统与实战
 | 章节 | 核心算法 | 复杂度 |
@@ -351,8 +370,8 @@ g++ -std=c++17 01_introduction/fibonacci.cpp -o fibonacci
 | 概率/相似性 | Count-Min/HLL、一致性哈希、Merkle、Cuckoo、LRU-K、LSH | 亚线性/近似 |
 | 存储系统 | B+Tree、LSM、WAL、倒排索引、位图索引、SSTable | O(log n)/顺序写 |
 | 并发DS | 无锁栈/队列、分段锁Map、RCU、Spinlock/RWLock、Ring Buffer | O(1)无锁 |
-| 内存管理 | Buddy Allocator (伙伴)、Memory Pool (对象池) | O(log M)/O(1) |
-| 外存算法 | 外存归并排序、K路归并+败者树 | O(N/B · log N) I/O |
+| 内存管理 | Buddy、内存池、SLAB(Linux)、Region/Arena、Mark-Sweep GC | O(log M)/O(1) |
+| 外存算法 | 外存归并排序、K路归并+败者树、缓冲树、缓存忘却、列式存储 | O(N/B · log N) I/O |
 | 面试模板 | 单调栈/双指针/前缀和/滑动窗口/回溯/股票DP/二分 | O(n)~O(n log n) |
 | 竞赛进阶 | 莫队、矩阵快速幂、SG定理、凸包、CDQ分治、虚树 | O(n√n)~O(n log²n) |
 
